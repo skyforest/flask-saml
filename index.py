@@ -6,9 +6,13 @@ from flask import (Flask, request, render_template, redirect, session,
 from onelogin.saml2.auth import OneLogin_Saml2_Auth
 from onelogin.saml2.utils import OneLogin_Saml2_Utils
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'onelogindemopytoolkit'
+app.config['SECRET_KEY'] = os.getenv('FLASK_SECRET_KEY')
 app.config['SAML_PATH'] = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'saml')
 
 
