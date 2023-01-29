@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h3>{% block title %}Application Error{% endblock %}</h3>
+{% endblock %}
+
+{% block content %}
+    <h1>An unexpected error has occurred</h1>
+    <p>{{message}}</p>
+    <p>Sorry for the inconvenience!</p>
+    <p><a href="/">Back Home</a></p>
+{% endblock %}
